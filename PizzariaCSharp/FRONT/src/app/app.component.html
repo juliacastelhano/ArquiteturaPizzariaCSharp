@@ -1,0 +1,70 @@
+<mat-toolbar color="accent">
+  <button (click)="sidenav.toggle()" mat-icon-button>
+    <mat-icon> menu </mat-icon>
+  </button>
+  <span> Pizzaria </span>
+</mat-toolbar>
+
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav [opened]="true" mode="side">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/pages/cardapio/listar-cardapio">
+        <div class="item">
+          <mat-icon class="icon"> restaurant </mat-icon>
+          <span>Menu</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/cardapio/cadastrar-cardapio">
+        <div class="item">
+          <mat-icon class="icon"> add </mat-icon>
+          <span>Cadastrar Pizza</span>
+        </div>
+      </a>
+      <hr>
+      <a mat-list-item routerLink="/pages/carrinho/listar-carrinho">
+        <div class="item">
+          <mat-icon class="icon"> local_pizza </mat-icon>
+          <span>Listar Pedidos</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/carrinho/cadastrar-carrinho">
+        <div class="item">
+          <mat-icon class="icon"> add </mat-icon>
+          <span>Fazer Pedido</span>
+        </div>
+      </a>
+      <hr>
+      <a mat-list-item routerLink="/pages/cliente/listar-cliente">
+        <div class="item">
+          <mat-icon class="icon"> groups </mat-icon>
+          <span>Listar Clientes</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/cliente/cadastrar-cliente">
+        <div class="item">
+          <mat-icon class="icon"> add </mat-icon>
+          <span>Cadastrar Cliente</span>
+        </div>
+      </a>
+      <hr>
+      <a mat-list-item routerLink="/pages/atendente/listar-atendente">
+        <div class="item">
+          <mat-icon class="icon"> person_apron </mat-icon>
+          <span>Listar Atendentes</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/atendente/cadastrar-atendente">
+        <div class="item">
+          <mat-icon class="icon"> add </mat-icon>
+          <span>Cadastrar Atendente</span>
+        </div>
+      </a>
+      <hr>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <router-outlet>
+      <!-- Mostrar os componentes selecionados -->
+    </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
